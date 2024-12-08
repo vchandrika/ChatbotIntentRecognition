@@ -1,0 +1,12 @@
+mport chatbot_model
+
+app = Flask(_name_)
+
+@app.route('/process_query', methods=['POST'])
+def process_query():
+    user_query = request.json.get('query')
+    intent = chatbot_model.predict_intent(user_query)
+    return jsonify({'response': f'Intent detected: {intent}'}), 200
+
+if _name_ == '_main_':
+    app.run(debug=True)
