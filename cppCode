@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// Example function to classify user intent
+string classify_intent(const string& user_query) {
+    // Example classification logic (e.g., hard-coded intents or simple keyword matching)
+    if (user_query.find("hello") != string::npos) {
+        return "greeting";
+    } else if (user_query.find("price") != string::npos) {
+        return "product inquiry";
+    }
+    return "unknown";
+}
+
+int main() {
+    string user_query;
+    cout << "Enter your query: ";
+    getline(cin, user_query);
+
+    string intent = classify_intent(user_query);
+    cout << "Intent classified: " << intent << endl;
+
+    return 0;
+}
